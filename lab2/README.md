@@ -1,4 +1,4 @@
-Source code of linker is available in all .cpp and .h files
+Source code of scheduler is available in all .cpp and .h files
 
 To use terminal to make file and generate executable file 'sched', 
 
