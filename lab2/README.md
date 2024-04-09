@@ -8,7 +8,7 @@ To use terminal to make file and generate executable file 'sched',
 
 
 
-To test 'linker', you should
+To test 'sched', you should
 
 1. 'mv sched test', move executable 'sched' file to 'test' directory
 2. 'cd test', cd to test directory
