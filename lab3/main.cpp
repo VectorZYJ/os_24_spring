@@ -10,12 +10,12 @@ using namespace std;
 
 typedef enum {T_UNMAP, T_MAP, T_IN, T_OUT, T_FIN, T_FOUT, T_ZERO, T_SEGV, T_SEGPROT} pop_type;
 const int MAX_VPAGES = 64;
-int MAX_FRAMES = 16, vpage, num_rands;
+int MAX_FRAMES = 128, vpage, num_rands;
 unsigned long inst_count = 0, ctx_switches = 0, process_exits = 0;
 unsigned long long cost = 0;
 char operation, algo;
 char *options;
-bool print_O = true, print_P = true, print_F = true, print_S = true;
+bool print_O = false, print_P = false, print_F = false, print_S = false;
 bool print_x = false, print_y = false, print_f = false, print_a = false;
 
 string filename = "../lab3_assign/in11", rfilename = "../lab3_assign/rfile", line;
@@ -59,12 +59,12 @@ int main(int argc, char *argv[]) {
                 break;
         }
     }
-    if (MAX_FRAMES <= 1) {
+    if (MAX_FRAMES < 1) {
         fprintf (stderr, "Really funny .. you need at least one frame\n");
         return 1;
     }
     else if (MAX_FRAMES > 128) {
-        fprintf (stderr, "sorry max frames supported = 128\n");
+        fprintf (stderr, "Sorry max frames supported = 128\n");
         return 1;
     }
     if (algo != 'f' && algo != 'r' && algo != 'c' && algo != 'e' && algo != 'a' && algo != 'w') {
